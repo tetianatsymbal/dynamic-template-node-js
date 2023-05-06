@@ -9,7 +9,6 @@ const readline = require("readline").createInterface({
 
 readline.question("Enter the path to the template file: ", (templatePath) => {
   readline.question("Enter the path to the data file: ", (dataPath) => {
-    // Load the template file and the data file
     templatePath = "./views/index.html";
     dataPath = "data.json";
 
@@ -23,7 +22,6 @@ readline.question("Enter the path to the template file: ", (templatePath) => {
       return;
     }
 
-    // Create a server that renders the template with the data
     const server = http.createServer((req, res) => {
       console.log(req.url);
 
@@ -50,7 +48,6 @@ readline.question("Enter the path to the template file: ", (templatePath) => {
         }
       }
 
-      // Send the rendered HTML to the client
       res.end(rendered);
     });
 
@@ -58,59 +55,9 @@ readline.question("Enter the path to the template file: ", (templatePath) => {
       console.error("Server error:", err.me);
     });
 
-    // Start the server on port 3000
     server.listen(3000, () => {
       console.log("Server listening on http://localhost:3000");
     });
-
-    // Close the readline interface
     readline.close();
   });
 });
-
-// const server = http.createServer((req, res) => {
-//   if (req.url === "/") {
-
-//     // Read the template file
-//     fs.readFile(templatePath, "utf8", (err, template) => {
-//       if (err) {
-//         res.writeHead(500, { "Content-Type": "text/plain" });
-//         res.end(`Error reading template file: ${err.message}`);
-//         return;
-//       }
-
-//       // Read the data file
-//       fs.readFile(dataPath, "utf8", (err, data) => {
-//         if (err) {
-//           res.writeHead(500, { "Content-Type": "text/plain" });
-//           res.end(`Error reading data file: ${err.message}`);
-//           return;
-//         }
-
-//         try {
-//           // Parse the data as JSON
-//           const dataObj = JSON.parse(data);
-
-//           // Render the template with the data object
-//           const rendered = ejs.render(template, dataObj);
-
-//           // Send the rendered HTML to the client
-//           res.writeHead(200, { "Content-Type": "text/html" });
-//           res.end(rendered);
-//         } catch (err) {
-//           res.writeHead(500, { "Content-Type": "text/plain" });
-//           res.end(`Error rendering template: ${err.message}`);
-//         }
-//       });
-//     });
-//   } else {
-//     // Handle 404 Not Found error
-//     res.writeHead(404, { "Content-Type": "text/plain" });
-//     res.end("404 Not Found");
-//   }
-// });
-
-// const port = 3000;
-// server.listen(port, () => {
-//   console.log(`Server listening on http://localhost:${port}`);
-// });
