@@ -1,0 +1,24 @@
+{
+  "menu": [
+    {
+      "title": "Tartare de thon, sauce au gingembre",
+      "description": "Tuna tartare, ginger sauce",
+      "price": "575"
+    },
+    {
+      "title": "Tarte au citron vert",
+      "description": "Lime tart",
+      "price": "250"
+    },
+    {
+      "title": "Ceviche de dorado, mangue",
+      "description": "Dorado ceviche, mango",
+      "price": "410"
+    },
+    {
+      "title": "Salade Niçoise au thon",
+      "description": "Niçoise tuna salad",
+      "price": "390"
+    }
+  ]
+}

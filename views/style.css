@@ -1,0 +1,29 @@
+body {
+ background-color: blanchedalmond;
+ padding: 0 90px;
+ margin:  0 auto;
+}
+h2 {
+ text-align: center;
+ text-decoration: underline;
+ text-transform: uppercase;
+ font-weight: 500;
+ color: darkred;
+ font-size: 40px;
+}
+h3 span {
+ color: brown;
+}
+.menu {
+ margin: 0 auto;
+ width: 50%;
+ text-align: center;
+ display: flex;
+ flex-direction: column;
+ border: 2px solid brown;
+ border-radius: 15px;
+}
+.menu-item {
+ padding: 10px;
+ margin: 20px;
+}
