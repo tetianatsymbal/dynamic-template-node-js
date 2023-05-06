@@ -9,9 +9,6 @@ const readline = require("readline").createInterface({
 
 readline.question("Enter the path to the template file: ", (templatePath) => {
   readline.question("Enter the path to the data file: ", (dataPath) => {
-    templatePath = "./views/index.html";
-    dataPath = "data.json";
-
     let template, data;
     try {
       template = fs.readFileSync(templatePath, "utf8");
