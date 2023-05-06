@@ -20,8 +20,6 @@ readline.question("Enter the path to the template file: ", (templatePath) => {
     }
 
     const server = http.createServer((req, res) => {
-      console.log(req.url);
-
       let filePath = path.join(
         __dirname,
         "views",
